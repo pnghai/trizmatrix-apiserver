@@ -11,8 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', function()
+{
+	return View::make('hello');
 });
 
 /*
@@ -27,5 +28,13 @@ Route::get('/', function () {
 */
 
 Route::group(['middleware' => ['web']], function () {
-    //
+
+	Route::resource('principle', 'PrincipleController');
+	Route::resource('parameter', 'ParameterController');
+	Route::resource('solution', 'SolutionController');
+
+});
+
+Route::group(['middleware' => ['api']], function () {
+
 });
