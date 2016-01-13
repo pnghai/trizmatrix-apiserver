@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "d1485685a8e9c1b605ae771f7081779c",
-    "content-hash": "09a60c93c651f609d473b4ba96f62e6d",
+    "hash": "1b3e9d8d161adab7be08c336c6dde336",
+    "content-hash": "dd8cd1bd392cf985500b40f061bb4e69",
     "packages": [
         {
             "name": "barryvdh/laravel-ide-helper",
@@ -625,6 +625,99 @@
                 "parser"
             ],
             "time": "2014-09-09 13:34:57"
+        },
+        {
+            "name": "echo-it/laravel-jsonapi",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/egeriis/laravel-jsonapi.git",
+                "reference": "e52ae4e4ef6597ab8398dd5b4046bc679c0b58b5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/egeriis/laravel-jsonapi/zipball/e52ae4e4ef6597ab8398dd5b4046bc679c0b58b5",
+                "reference": "e52ae4e4ef6597ab8398dd5b4046bc679c0b58b5",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/database": "5.2.*",
+                "illuminate/http": "5.2.*",
+                "illuminate/pagination": "5.2.*",
+                "illuminate/support": "5.2.*"
+            },
+            "require-dev": {
+                "justinrainbow/json-schema": "^1.5",
+                "phpunit/phpunit": "4.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "EchoIt\\JsonApi\\": "src/"
+                },
+                "psr-4": {
+                    "EchoIt\\JsonApi\\Tests\\": "tests/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Ronni Egeriis Persson",
+                    "email": "ronni@egeriis.me"
+                },
+                {
+                    "name": "Jared Chapiewsky",
+                    "email": "chapiewsky@earthlinginteractive.com"
+                }
+            ],
+            "time": "2015-12-30 11:11:24"
+        },
+        {
+            "name": "flynsarmy/csv-seeder",
+            "version": "v1.0.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Flynsarmy/laravel-csv-seeder.git",
+                "reference": "9b6b261082bf7ff245eeb355261e1038cbd89262"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Flynsarmy/laravel-csv-seeder/zipball/9b6b261082bf7ff245eeb355261e1038cbd89262",
+                "reference": "9b6b261082bf7ff245eeb355261e1038cbd89262",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": ">=4.1.0",
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Flynsarmy\\CsvSeeder\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Flyn San",
+                    "email": "flynsarmy@gmail.com"
+                }
+            ],
+            "description": "Allows seeding of the database with CSV files",
+            "keywords": [
+                "csv",
+                "laravel",
+                "seed",
+                "seeding",
+                "seeds"
+            ],
+            "time": "2015-09-04 04:13:30"
         },
         {
             "name": "jakub-onderka/php-console-color",
@@ -3706,6 +3799,7 @@
     "minimum-stability": "stable",
     "stability-flags": {
         "orangehill/iseed": 20,
+        "echo-it/laravel-jsonapi": 20,
         "xethron/migrations-generator": 20,
         "way/generators": 20
     },

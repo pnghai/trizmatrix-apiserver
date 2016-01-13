@@ -10,7 +10,9 @@
         "barryvdh/laravel-ide-helper": "v2.1.2",
         "doctrine/dbal": "^2.5",
         "orangehill/iseed": "dev-master",
-        "vlucas/phpdotenv": "^2.2"
+        "vlucas/phpdotenv": "^2.2",
+        "flynsarmy/csv-seeder": "1.*",
+        "echo-it/laravel-jsonapi": "dev-master"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
