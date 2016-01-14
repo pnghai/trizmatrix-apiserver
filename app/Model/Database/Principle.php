@@ -1,13 +1,15 @@
 <?php
 
-namespace App;
+namespace App\Model\Database;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Foundation\Validation\ValidatesRequests;
 
 class Principle extends Model {
 
+    protected $primaryKey = 'id';
 	protected $table = 'principles';
-	public $timestamps = true;
+	public $timestamps = false;
 	protected $fillable = array('idx', 'title', 'explanation');
 	protected $visible = array('idx', 'title', 'explanation');
 
