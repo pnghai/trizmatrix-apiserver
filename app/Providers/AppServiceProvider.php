@@ -24,9 +24,6 @@ class AppServiceProvider extends ServiceProvider
     public function register()
     {
         if ($this->app->environment() == 'staging') {
-            $this->app->register('Laracasts\Generators\GeneratorsServiceProvider');
-            $this->app->register('Way\Generators\GeneratorsServiceProvider');
-            $this->app->register('Xethron\MigrationsGenerator\MigrationsGeneratorServiceProvider');
         }
     }
 }
