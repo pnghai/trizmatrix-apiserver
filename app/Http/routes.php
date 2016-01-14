@@ -13,7 +13,7 @@
 
 Route::get('/', function()
 {
-	return View::make('hello');
+	return View::make('welcome');
 });
 
 /*
@@ -29,12 +29,14 @@ Route::get('/', function()
 
 Route::group(['middleware' => ['web']], function () {
 
-	Route::resource('principle', 'PrincipleController');
-	Route::resource('parameter', 'ParameterController');
-	Route::resource('solution', 'SolutionController');
+	Route::resource('principles', 'PrincipleController');
+	Route::resource('parameters', 'ParameterController');
+	Route::resource('solutions', 'SolutionController');
 
 });
 
 Route::group(['middleware' => ['api']], function () {
-
+	Route::group(['namespace' => 'Api'], function() {
+		Route::resource('principles', 'PrincipleJsonApiController');
+	});
 });
