@@ -7,10 +7,15 @@ use Illuminate\Foundation\Validation\ValidatesRequests;
 
 class Parameter extends Model {
 
-	protected $primaryKey = 'id';
 	protected $table = 'parameters';
-	public $timestamps = true;
+	public $timestamps = false;
 	protected $fillable = array('idx', 'title', 'englishTitle', 'explanation');
-	protected $visible = array('idx', 'title', 'englishTitle', 'explanation');
 
+	public function improvedSolutions(){
+		return $this->hasMany(Solution::class,'improvedParam');
+	}
+
+    public function preservedSolutions(){
+        return $this->hasMany(Solution::class,'preservedParam');
+    }
 }

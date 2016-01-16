@@ -35,8 +35,11 @@ Route::group(['middleware' => ['web']], function () {
 
 });
 
-Route::group(['middleware' => ['api']], function () {
-	Route::group(['namespace' => 'Api'], function() {
-		Route::resource('principles', 'PrincipleJsonApiController');
-	});
+Route::group(['middleware' => ['api'], 'namespace' => 'Api\V1'], function () {
+	Route::resource('principles', 'PrincipleJsonApiController', ['only' => ['index', 'show']]);
+	Route::resource('parameters', 'ParameterJsonApiController', ['only' => ['index', 'show']]);
+    Route::resource('solutions', 'SolutionJsonApiController', ['only' => ['index', 'show']]);
+    Route::get('/improvements/{improvedId}/preservations/{preservedId}/solutions', [
+        'as' => 'improvements.preservations.solutions',
+        'uses' => 'SolutionJsonApiController@getSolutionsByParams']);
 });

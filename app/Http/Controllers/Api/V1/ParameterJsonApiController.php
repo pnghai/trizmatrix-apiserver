@@ -6,12 +6,12 @@
  * Time: 12:56 PM
  */
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api\V1;
 
-use App\Model\Database\Principle;
+use App\Model\Database\Parameter;
 use NilPortugues\Laravel5\JsonApi\Controller\JsonApiController;
 
-class PrincipleJsonApiController extends JsonApiController
+class ParameterJsonApiController extends JsonApiController
 {
     /**
      * Return the Eloquent model that will be used
@@ -21,6 +21,6 @@ class PrincipleJsonApiController extends JsonApiController
      */
     public function getDataModel()
     {
-        return new Principle();
+        return new Parameter();
     }
 }

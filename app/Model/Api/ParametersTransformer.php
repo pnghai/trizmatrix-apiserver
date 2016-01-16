@@ -8,10 +8,10 @@
 
 namespace App\Model\Api;
 
-use App\Model\Database\Principle;
+use App\Model\Database\Parameter;
 use NilPortugues\Api\Mappings\JsonApiMapping;
 
-class PrinciplesTransformer implements JsonApiMapping
+class ParametersTransformer implements JsonApiMapping
 {
     /**
      * Returns a string with the full class name, including namespace.
@@ -20,7 +20,7 @@ class PrinciplesTransformer implements JsonApiMapping
      */
     public function getClass()
     {
-        return Principle::class;
+        return Parameter::class;
     }
 
     /**
@@ -31,7 +31,7 @@ class PrinciplesTransformer implements JsonApiMapping
      */
     public function getAlias()
     {
-        return 'principles';
+        return 'parameters';
     }
 
     /**
@@ -75,8 +75,8 @@ class PrinciplesTransformer implements JsonApiMapping
     public function getUrls()
     {
         return [
-            'self' => ['name' => 'principles.show', 'as_id' => 'id'],
-            'principles' => ['name' => 'principles.index']
+            'self' => ['name' => 'parameters.show', 'as_id' => 'id'],
+            'parameters' => ['name' => 'parameters.index']
         ];
     }
 
