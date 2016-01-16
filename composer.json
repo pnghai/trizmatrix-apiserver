@@ -11,7 +11,7 @@
         "doctrine/dbal": "^2.5",
         "vlucas/phpdotenv": "^2.2",
         "flynsarmy/csv-seeder": "1.*",
-        "nilportugues/laravel5-json-api": "2.1.*"
+        "nilportugues/laravel5-json-api": "^2.1"
 
     },
     "require-dev": {
