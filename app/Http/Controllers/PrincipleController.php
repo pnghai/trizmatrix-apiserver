@@ -1,5 +1,7 @@
 <?php namespace App\Http\Controllers;
 
+use App\Model\Database\Principle;
+
 class PrincipleController extends Controller {
 
   /**
@@ -40,7 +42,7 @@ class PrincipleController extends Controller {
    */
   public function show($id)
   {
-    
+    return view('principles.show', ['principles' => Principle::findOrFail($id)]);
   }
 
   /**
