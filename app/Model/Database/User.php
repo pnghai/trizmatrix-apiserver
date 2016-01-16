@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Model\Database;
 
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
