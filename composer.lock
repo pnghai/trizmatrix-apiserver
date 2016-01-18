@@ -1306,16 +1306,16 @@
         },
         {
             "name": "nilportugues/json-api",
-            "version": "2.1.3",
+            "version": "2.1.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nilportugues/php-json-api.git",
-                "reference": "ff161fcd6232f549836fc4ed510135efde4680b6"
+                "reference": "1c955b9297075ad298c9e58427e47e729d9e4bf4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nilportugues/php-json-api/zipball/ff161fcd6232f549836fc4ed510135efde4680b6",
-                "reference": "ff161fcd6232f549836fc4ed510135efde4680b6",
+                "url": "https://api.github.com/repos/nilportugues/php-json-api/zipball/1c955b9297075ad298c9e58427e47e729d9e4bf4",
+                "reference": "1c955b9297075ad298c9e58427e47e729d9e4bf4",
                 "shasum": ""
             },
             "require": {
@@ -1359,7 +1359,7 @@
                 "serializer",
                 "transformer"
             ],
-            "time": "2016-01-13 11:19:36"
+            "time": "2016-01-18 13:42:51"
         },
         {
             "name": "nilportugues/laravel5-json-api",
@@ -1481,26 +1481,28 @@
         },
         {
             "name": "nilportugues/serializer",
-            "version": "1.1.5",
+            "version": "1.1.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nilportugues/serializer.git",
-                "reference": "82ede04c687336aaec5f1c58f3ec986626b05810"
+                "reference": "655119feef090fc65a2bf711561073a805515f27"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nilportugues/serializer/zipball/82ede04c687336aaec5f1c58f3ec986626b05810",
-                "reference": "82ede04c687336aaec5f1c58f3ec986626b05810",
+                "url": "https://api.github.com/repos/nilportugues/serializer/zipball/655119feef090fc65a2bf711561073a805515f27",
+                "reference": "655119feef090fc65a2bf711561073a805515f27",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.5.0"
+                "php": ">=5.6.0",
+                "symfony/yaml": "^2.7"
             },
             "require-dev": {
                 "doctrine/collections": "^1.3",
                 "fabpot/php-cs-fixer": "^1.9",
                 "mmoreram/php-formatter": "dev-master",
-                "phpunit/phpunit": "4.4.*",
+                "nilportugues/php_backslasher": "~0.2",
+                "phpunit/phpunit": "5.*",
                 "satooshi/php-coveralls": "dev-master"
             },
             "type": "library",
@@ -1537,20 +1539,20 @@
                 "serialize",
                 "serializer"
             ],
-            "time": "2015-08-28 23:12:12"
+            "time": "2015-11-21 16:36:31"
         },
         {
             "name": "nilportugues/serializer-eloquent",
-            "version": "1.0.6",
+            "version": "1.0.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nilportugues/serializer-eloquent-driver.git",
-                "reference": "fd9f5094d69565d2ae57ab9e6e8b84e1beba8470"
+                "reference": "d3a0f4cd6195c1380b3db1b73c149ed410cc7800"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nilportugues/serializer-eloquent-driver/zipball/fd9f5094d69565d2ae57ab9e6e8b84e1beba8470",
-                "reference": "fd9f5094d69565d2ae57ab9e6e8b84e1beba8470",
+                "url": "https://api.github.com/repos/nilportugues/serializer-eloquent-driver/zipball/d3a0f4cd6195c1380b3db1b73c149ed410cc7800",
+                "reference": "d3a0f4cd6195c1380b3db1b73c149ed410cc7800",
                 "shasum": ""
             },
             "require": {
@@ -1595,7 +1597,7 @@
                 "serializer",
                 "transformer"
             ],
-            "time": "2016-01-13 13:34:20"
+            "time": "2016-01-16 09:47:42"
         },
         {
             "name": "paragonie/random_compat",
@@ -1908,16 +1910,16 @@
         },
         {
             "name": "symfony/class-loader",
-            "version": "v2.8.1",
+            "version": "v2.8.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/class-loader.git",
-                "reference": "ec74b0a279cf3a9bd36172b3e3061591d380ce6c"
+                "reference": "98e9089a428ed0e39423b67352c57ef5910a3269"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/class-loader/zipball/ec74b0a279cf3a9bd36172b3e3061591d380ce6c",
-                "reference": "ec74b0a279cf3a9bd36172b3e3061591d380ce6c",
+                "url": "https://api.github.com/repos/symfony/class-loader/zipball/98e9089a428ed0e39423b67352c57ef5910a3269",
+                "reference": "98e9089a428ed0e39423b67352c57ef5910a3269",
                 "shasum": ""
             },
             "require": {
@@ -1956,20 +1958,20 @@
             ],
             "description": "Symfony ClassLoader Component",
             "homepage": "https://symfony.com",
-            "time": "2015-12-05 17:37:59"
+            "time": "2016-01-03 15:33:41"
         },
         {
             "name": "symfony/console",
-            "version": "v2.8.1",
+            "version": "v2.8.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/console.git",
-                "reference": "2e06a5ccb19dcf9b89f1c6a677a39a8df773635a"
+                "reference": "d0239fb42f98dd02e7d342f793c5d2cdee0c478d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/console/zipball/2e06a5ccb19dcf9b89f1c6a677a39a8df773635a",
-                "reference": "2e06a5ccb19dcf9b89f1c6a677a39a8df773635a",
+                "url": "https://api.github.com/repos/symfony/console/zipball/d0239fb42f98dd02e7d342f793c5d2cdee0c478d",
+                "reference": "d0239fb42f98dd02e7d342f793c5d2cdee0c478d",
                 "shasum": ""
             },
             "require": {
@@ -2016,7 +2018,7 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "https://symfony.com",
-            "time": "2015-12-22 10:25:57"
+            "time": "2016-01-14 08:33:16"
         },
         {
             "name": "symfony/debug",
@@ -2788,6 +2790,55 @@
                 "dump"
             ],
             "time": "2015-12-05 11:13:14"
+        },
+        {
+            "name": "symfony/yaml",
+            "version": "v2.8.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/yaml.git",
+                "reference": "34c8a4b51e751e7ea869b8262f883d008a2b81b8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/yaml/zipball/34c8a4b51e751e7ea869b8262f883d008a2b81b8",
+                "reference": "34c8a4b51e751e7ea869b8262f883d008a2b81b8",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.9"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.8-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\Yaml\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony Yaml Component",
+            "homepage": "https://symfony.com",
+            "time": "2016-01-13 10:28:07"
         },
         {
             "name": "vlucas/phpdotenv",
@@ -4121,55 +4172,6 @@
             "description": "Symfony DomCrawler Component",
             "homepage": "https://symfony.com",
             "time": "2015-12-26 13:42:31"
-        },
-        {
-            "name": "symfony/yaml",
-            "version": "v3.0.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/symfony/yaml.git",
-                "reference": "3df409958a646dad2bc5046c3fb671ee24a1a691"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/symfony/yaml/zipball/3df409958a646dad2bc5046c3fb671ee24a1a691",
-                "reference": "3df409958a646dad2bc5046c3fb671ee24a1a691",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.5.9"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "3.0-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Symfony\\Component\\Yaml\\": ""
-                },
-                "exclude-from-classmap": [
-                    "/Tests/"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Fabien Potencier",
-                    "email": "fabien@symfony.com"
-                },
-                {
-                    "name": "Symfony Community",
-                    "homepage": "https://symfony.com/contributors"
-                }
-            ],
-            "description": "Symfony Yaml Component",
-            "homepage": "https://symfony.com",
-            "time": "2015-12-26 13:39:53"
         }
     ],
     "aliases": [],
