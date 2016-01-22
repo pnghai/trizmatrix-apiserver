@@ -16,16 +16,17 @@
 */
 $env = $app->detectEnvironment(function(){
     $environmentPath = __DIR__.'/../.env';
-    $setEnv = trim(file_get_contents($environmentPath));
-    if (file_exists($environmentPath))
-    {
+    if (!file_exists($environmentPath)){
+        //heroku
+        $dotenv = new Dotenv\Dotenv(__DIR__ .'/../');
+        $dotenv->load();
+    }
+    else{
+        $setEnv = trim(file_get_contents($environmentPath));
+
         putenv("APP_ENV=$setEnv");
         if (getenv('APP_ENV') && file_exists(__DIR__.'/../.' .getenv('APP_ENV') .'.env')) {
             $dotenv = new Dotenv\Dotenv(__DIR__ . '/../', '.' . getenv('APP_ENV') . '.env');
-            $dotenv->load();
-        }
-        else{ //heroku
-            $dotenv = new Dotenv\Dotenv(__DIR__ .'/../');
             $dotenv->load();
         }
     }
