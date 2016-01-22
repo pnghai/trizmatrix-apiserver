@@ -18,8 +18,7 @@ $env = $app->detectEnvironment(function(){
     $environmentPath = __DIR__.'/../.env';
     if (!file_exists($environmentPath)){
         //heroku
-        $dotenv = new Dotenv\Dotenv(__DIR__ .'/../');
-        $dotenv->load();
+        return getenv('APP_ENV') ?: 'production';
     }
     else{
         $setEnv = trim(file_get_contents($environmentPath));
