@@ -24,5 +24,9 @@ $env = $app->detectEnvironment(function(){
             $dotenv = new Dotenv\Dotenv(__DIR__ . '/../', '.' . getenv('APP_ENV') . '.env');
             $dotenv->load();
         }
+        else{ //heroku
+            $dotenv = new Dotenv\Dotenv(__DIR__ .'/../');
+            $dotenv->load();
+        }
     }
 });
