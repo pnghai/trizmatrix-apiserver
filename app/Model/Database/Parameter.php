@@ -11,11 +11,4 @@ class Parameter extends Model {
 	public $timestamps = false;
 	protected $fillable = array('idx', 'title', 'englishTitle', 'explanation');
 
-	public function improvedSolutions(){
-		return $this->hasMany(Solution::class,'improvedParam');
 	}
-
-    public function preservedSolutions(){
-        return $this->hasMany(Solution::class,'preservedParam');
-    }
-}

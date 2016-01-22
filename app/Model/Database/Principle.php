@@ -11,8 +11,4 @@ class Principle extends Model {
 	public $timestamps = false;
 	protected $fillable = array('idx', 'title', 'explanation');
 	//protected $visible = array('idx', 'title', 'explanation');
-
-	public function solutions(){
-		return $this->hasMany(Solution::class,'principleId')->limit(10);
-	}
 }

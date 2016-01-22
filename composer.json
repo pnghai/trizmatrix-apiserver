@@ -11,8 +11,9 @@
         "doctrine/dbal": "^2.5",
         "vlucas/phpdotenv": "^2.2",
         "flynsarmy/csv-seeder": "1.*",
-        "nilportugues/laravel5-json-api": "^2.1"
-
+        "nilportugues/laravel5-json-api": "^2.1",
+        "asm89/stack-cors": "dev-master as 0.2.2",
+        "barryvdh/laravel-cors": "^0.7.3"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

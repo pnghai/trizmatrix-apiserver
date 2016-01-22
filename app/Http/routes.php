@@ -35,7 +35,7 @@ Route::group(['middleware' => ['web']], function () {
 
 });
 
-Route::group(['middleware' => ['api'], 'prefix' => 'v1', 'namespace' => 'Api\V1'], function () {
+Route::group(['middleware' => ['cors','api'], 'prefix' => 'v1', 'namespace' => 'Api\V1'], function () {
 	Route::resource('principles', 'PrincipleJsonApiController', ['only' => ['index', 'show']]);
 	Route::resource('parameters', 'ParameterJsonApiController', ['only' => ['index', 'show']]);
     Route::resource('solutions', 'SolutionJsonApiController', ['only' => ['index', 'show']]);
