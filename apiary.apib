@@ -1,0 +1,183 @@
+FORMAT: 1A
+HOST: http://trizmatrix.apiblueprint.org/
+
+# TRIZMatrix
+
+TRIZ matrix is a simple API allowing consumers to view solutions for technical conflicts.
+
+## Parameters Collection [/parameters]
+
+### List All Parameters [GET]
+
++ Response 200 (application/json)
+
+        {
+            "links": {
+                "self": "http://example.com/parameters",
+                "next": "http://example.com/parameters?page[offset]=2",
+                "last": "http://example.com/parameters?page[offset]=10"
+            },
+            "data": [{
+                "type": "parameters",
+                "id": "1",
+                "attributes": {
+                    "title": "ABC",
+                    "engTitle": "Alphabet",
+                    "explanation": "ABC is alphabet"
+                    },
+                "links": {
+                    "self": "http://example.com/parameters/1"
+                    }
+                }
+            }]
+        }
+
+## Parameter [/parameters/{id}]
+A single Parameter object with all its details
+
++ Parameters
+    + id (required, number, `1`) ... Numeric `id` of the Parameter to perform action with. Has example value.
+
+### Retrieve a Parameter [GET]
++ Response 200 (application/json)
+
+        {
+            "links": {
+                "self": "http://example.com/parameters/1",
+                "next": "http://example.com/parameters/2",
+                "last": "http://example.com/parameters/last"
+            },
+            "data": {
+                "type": "parameters",
+                "id": "1",
+                "attributes": {
+                    "title": "ABC",
+                    "engTitle": "Alphabet",
+                    "explanation": "ABC is alphabet"
+                    },
+                "links": {
+                    "self": "http://example.com/parameters/1"
+                    }
+                }
+            }
+        }
+
+
+## Principles Collection [/principles]
+
+### List All Principles [GET]
+
++ Response 200 (application/json)
+
+        {
+            "links": {
+                "self": "http://example.com/principles/1",
+                "next": "http://example.com/principles/2",
+                "last": "http://example.com/principles/last"
+            },
+            "data": [{
+                "type": "principles",
+                "id": "1",
+                "attributes": {
+                    "title": "Principle 1",
+                    "explanation": "It is the first principle"
+                    },
+                "links": {
+                    "self": "http://example.com/principles/1"
+                    }
+                }
+            }]
+        }
+
+## Principle [/principles/{id}]
+A single Principle object with all its details
+
++ Parameters
+    + id (required, number, `1`) ... Numeric `id` of the Principle to perform action with. Has example value.
+
+### Retrieve a Principle [GET]
++ Response 200 (application/json)
+
+        {
+            "links": {
+                "self": "http://example.com/principles/1",
+                "next": "http://example.com/principles/2",
+                "last": "http://example.com/principles/last"
+            },
+            "data": {
+                "type": "principles",
+                "id": "1",
+                "attributes": {
+                    "title": "Principle 1",
+                    "explanation": "It is the first principle"
+                    },
+                "links": {
+                    "self": "http://example.com/principles/1"
+                    }
+                }
+            }
+        }
+
+
+## Solution Lists [/improvement/{improvedId}/preservation/{preservedId}/solutions?include={inclusion}]
+A list of solutions object with all its details
+
++ Parameters
+    + improvedId (required, number, `1`) ... Numeric `improveId` of the Improved Parameter to perform action with. Has example value.
+    + preservedId (required, number, `2`) ... Numeric `preserveId` of the Preserved Parameter to perform action with. Has example value.
+    + inclusion (optional, string, `principles`) ... String `inclusion` include data for solution. Has example value.
+
+### Retrieve a List of Solutions [GET]
+
++ Response 200 (application/json)
+
+        {
+            "links": {
+                "self": "http://example.com/improvement/1/preservation/2/solutions"
+            },
+            "data": [{
+                "type": "solutions",
+                "id": "1",
+                "attributes": {
+                    "impId" : "1",
+                    "preId" : "2",
+                    "principleId" : "1",
+                    "priority" : "1"
+                },
+                "relationships": {
+                    "impParam": {
+                        "links": {
+                            "self": "http://example.com/parameters/1"
+                            },
+                        "data": { "type": "parameters", "id": "1" }
+                    },
+                    "preParam": {
+                        "links": {
+                            "self": "http://example.com/parameters/2"
+                            },
+                        "data": { "type": "parameters", "id": "2" }
+                    },
+                    "principle": {
+                        "links": {
+                            "self": "http://example.com/principles/1"
+                            },
+                        "data": { "type": "principles", "id": "1" }
+                    }
+                },
+                "links": { 
+                    "self": "http://example.com/solutions/1"
+                    }
+            }],
+            "included": [{
+                "type" : "principles",
+                "id" : "1",
+                "attributes": {
+                    "title": "Principle 1",
+                    "explanation": "It is the first principle"
+                    },
+                "links": {
+                    "self": "http://example.com/principles/1"
+                    }
+                }
+            }]
+        }
