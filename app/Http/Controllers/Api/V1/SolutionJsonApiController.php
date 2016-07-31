@@ -33,49 +33,64 @@ class SolutionJsonApiController extends JsonApiController
     }
 
     /**
-     * @param string $improvedId
-     * @param string $preservedId
-     * @return Response
+     * Override the default index function to get many resources.
+     * @property int filters['improvedId']
+     * @property int filters['preservedId']
+     * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function getSolutionsByParams($improvedId, $preservedId)
+    public function index()
     {
         $apiRequest = RequestFactory::create();
-        $page = $apiRequest->getPage();
 
+        $page = $apiRequest->getPage();
         if (!$page->size()) {
-            $page->setSize(10); //Default elements per page
+            $page->setSize($this->pageSize);
         }
 
-        $resource = new ListResource(
-            $this->serializer,
-            $page,
-            $apiRequest->getFields(),
-            $apiRequest->getSort(),
-            $apiRequest->getIncludedRelationships(),
-            $apiRequest->getFilters()
-        );
+        $fields = $apiRequest->getFields();
+        $sorting = $apiRequest->getSort();
+        $included = $apiRequest->getIncludedRelationships();
+        $filters = $apiRequest->getFilters();
+        $resource = new ListResource($this->serializer, $page, $fields, $sorting, $included, $filters);
 
-        $totalAmount = function() use ($improvedId,$preservedId) {
-            $id = (new Solution())->getKeyName();
-            return Solution::query()
-                ->where(['improvedParam' => $improvedId, 'preservedParam' => $preservedId])
-                ->get([$id])
-                ->count();
-        };
+        if ($filters==NULL) {
+            $totalAmount = $this->totalAmountResourceCallable();
+            $results = $this->listResourceCallable();
 
-        $results = function()  use ($improvedId,$preservedId) {
-            return EloquentHelper::paginate(
-                $this->serializer,
-                Solution::query()
+            $controllerAction = '\\' . get_called_class() . '@index';
+            $uri = $this->uriGenerator($controllerAction);
+
+            return $this->addHeaders($resource->get($totalAmount, $results, $uri, get_class($this->getDataModel())));
+        }
+        else {
+            $improvedId = $filters['improvedParam'];
+            $preservedId = $filters['preservedParam'];
+            $totalAmount = function () use ($improvedId,$preservedId) {
+                $id = (new Solution())->getKeyName();
+                return Solution::query()
                     ->where(['improvedParam' => $improvedId, 'preservedParam' => $preservedId])
-            )->get();
-        };
+                    ->get([$id])
+                    ->count();
+            };
 
-        $uri = route('improvements.preservations.solutions', [
-            'improvedId' => $improvedId,
-            'preservedId' => $preservedId,
-        ]);
+            $results = function () use ($improvedId, $preservedId) {
+                return EloquentHelper::paginate(
+                    $this->serializer,
+                    Solution::query()
+                        ->where(['improvedParam' => $improvedId, 'preservedParam' => $preservedId])
+                )->get();
+            };
 
-        return $resource->get($totalAmount, $results, $uri, Solution::class);
+            $params=array(
+                'improvedParam' => $improvedId,
+                'preservedParam' => $preservedId
+            );
+            $queryString = http_build_query($params);
+
+            $controllerAction = '\\' . get_called_class() . '@index';
+            $uri = $this->uriGenerator($controllerAction);
+
+            return $resource->get($totalAmount, $results, $uri, Solution::class);
+        }
     }
 }

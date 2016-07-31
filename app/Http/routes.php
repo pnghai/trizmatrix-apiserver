@@ -39,7 +39,4 @@ Route::group(['middleware' => ['cors','api'], 'prefix' => 'v1', 'namespace' => '
 	Route::resource('principles', 'PrincipleJsonApiController', ['only' => ['index', 'show']]);
 	Route::resource('parameters', 'ParameterJsonApiController', ['only' => ['index', 'show']]);
     Route::resource('solutions', 'SolutionJsonApiController', ['only' => ['index', 'show']]);
-    Route::get('/improvements/{improvedId}/preservations/{preservedId}/solutions', [
-        'as' => 'improvements.preservations.solutions',
-        'uses' => 'SolutionJsonApiController@getSolutionsByParams']);
 });
