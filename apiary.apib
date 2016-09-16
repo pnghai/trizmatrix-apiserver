@@ -1,5 +1,5 @@
 FORMAT: 1A
-HOST: http://trizmatrix.apiblueprint.org/
+HOST: desolate-basin-50290.herokuapp.com/v1
 
 # TRIZMatrix
 
@@ -13,9 +13,9 @@ TRIZ matrix is a simple API allowing consumers to view solutions for technical c
 
         {
             "links": {
-                "self": "http://example.com/parameters",
-                "next": "http://example.com/parameters?page[offset]=2",
-                "last": "http://example.com/parameters?page[offset]=10"
+                "self": "http://desolate-basin-50290.herokuapp.com/v1/parameters",
+                "next": "http://desolate-basin-50290.herokuapp.com/v1/parameters?page[offset]=2",
+                "last": "http://desolate-basin-50290.herokuapp.com/v1/parameters?page[offset]=10"
             },
             "data": [{
                 "type": "parameters",
@@ -26,7 +26,7 @@ TRIZ matrix is a simple API allowing consumers to view solutions for technical c
                     "explanation": "ABC is alphabet"
                     },
                 "links": {
-                    "self": "http://example.com/parameters/1"
+                    "self": "http://desolate-basin-50290.herokuapp.com/v1/parameters/1"
                     }
                 }
             }]
@@ -43,9 +43,9 @@ A single Parameter object with all its details
 
         {
             "links": {
-                "self": "http://example.com/parameters/1",
-                "next": "http://example.com/parameters/2",
-                "last": "http://example.com/parameters/last"
+                "self": "http://desolate-basin-50290.herokuapp.com/v1/parameters/1",
+                "next": "http://desolate-basin-50290.herokuapp.com/v1/parameters/2",
+                "last": "http://desolate-basin-50290.herokuapp.com/v1/parameters/last"
             },
             "data": {
                 "type": "parameters",
@@ -56,7 +56,7 @@ A single Parameter object with all its details
                     "explanation": "ABC is alphabet"
                     },
                 "links": {
-                    "self": "http://example.com/parameters/1"
+                    "self": "http://desolate-basin-50290.herokuapp.com/v1/parameters/1"
                     }
                 }
             }
@@ -71,9 +71,9 @@ A single Parameter object with all its details
 
         {
             "links": {
-                "self": "http://example.com/principles/1",
-                "next": "http://example.com/principles/2",
-                "last": "http://example.com/principles/last"
+                "self": "http://desolate-basin-50290.herokuapp.com/v1/principles/1",
+                "next": "http://desolate-basin-50290.herokuapp.com/v1/principles/2",
+                "last": "http://desolate-basin-50290.herokuapp.com/v1/principles/last"
             },
             "data": [{
                 "type": "principles",
@@ -83,7 +83,7 @@ A single Parameter object with all its details
                     "explanation": "It is the first principle"
                     },
                 "links": {
-                    "self": "http://example.com/principles/1"
+                    "self": "http://desolate-basin-50290.herokuapp.com/v1/principles/1"
                     }
                 }
             }]
@@ -100,9 +100,9 @@ A single Principle object with all its details
 
         {
             "links": {
-                "self": "http://example.com/principles/1",
-                "next": "http://example.com/principles/2",
-                "last": "http://example.com/principles/last"
+                "self": "http://desolate-basin-50290.herokuapp.com/v1/principles/1",
+                "next": "http://desolate-basin-50290.herokuapp.com/v1/principles/2",
+                "last": "http://desolate-basin-50290.herokuapp.com/v1/principles/last"
             },
             "data": {
                 "type": "principles",
@@ -112,14 +112,14 @@ A single Principle object with all its details
                     "explanation": "It is the first principle"
                     },
                 "links": {
-                    "self": "http://example.com/principles/1"
+                    "self": "http://desolate-basin-50290.herokuapp.com/v1/principles/1"
                     }
                 }
             }
         }
 
 
-## Solution Lists [/improvement/{improvedId}/preservation/{preservedId}/solutions?include={inclusion}]
+## Solution Lists [/solutions/?filter%5BimprovedParam%5D={improvedId}&filter%5BpreservedParam%5D={preservedId}&include={inclusion}]
 A list of solutions object with all its details
 
 + Parameters
@@ -133,7 +133,7 @@ A list of solutions object with all its details
 
         {
             "links": {
-                "self": "http://example.com/improvement/1/preservation/2/solutions"
+                "self": "http://desolate-basin-50290.herokuapp.com/v1/solutions/?filter[improvedParam]=1&?filter[preservedParam]=2"
             },
             "data": [{
                 "type": "solutions",
@@ -147,25 +147,25 @@ A list of solutions object with all its details
                 "relationships": {
                     "impParam": {
                         "links": {
-                            "self": "http://example.com/parameters/1"
+                            "self": "http://desolate-basin-50290.herokuapp.com/v1/parameters/1"
                             },
                         "data": { "type": "parameters", "id": "1" }
                     },
                     "preParam": {
                         "links": {
-                            "self": "http://example.com/parameters/2"
+                            "self": "http://desolate-basin-50290.herokuapp.com/v1/parameters/2"
                             },
                         "data": { "type": "parameters", "id": "2" }
                     },
                     "principle": {
                         "links": {
-                            "self": "http://example.com/principles/1"
+                            "self": "http://desolate-basin-50290.herokuapp.com/v1/principles/1"
                             },
                         "data": { "type": "principles", "id": "1" }
                     }
                 },
                 "links": { 
-                    "self": "http://example.com/solutions/1"
+                    "self": "http://desolate-basin-50290.herokuapp.com/v1/solutions/1"
                     }
             }],
             "included": [{
@@ -176,7 +176,7 @@ A list of solutions object with all its details
                     "explanation": "It is the first principle"
                     },
                 "links": {
-                    "self": "http://example.com/principles/1"
+                    "self": "http://desolate-basin-50290.herokuapp.com/v1/principles/1"
                     }
                 }
             }]
