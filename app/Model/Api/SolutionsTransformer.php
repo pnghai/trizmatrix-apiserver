@@ -16,9 +16,7 @@ use NilPortugues\Api\Mappings\JsonApiMapping;
 class SolutionsTransformer implements JsonApiMapping
 {
     /**
-     * Returns a string with the full class name, including namespace.
-     *
-     * @return string
+     * {@inheritdoc}
      */
     public function getClass()
     {
@@ -26,10 +24,7 @@ class SolutionsTransformer implements JsonApiMapping
     }
 
     /**
-     * Returns a string representing the resource name
-     * as it will be shown after the mapping.
-     *
-     * @return string
+     * {@inheritdoc}
      */
     public function getAlias()
     {
@@ -37,11 +32,7 @@ class SolutionsTransformer implements JsonApiMapping
     }
 
     /**
-     * Returns an array of properties that will be renamed.
-     * Key is current property from the class.
-     * Value is the property's alias name.
-     *
-     * @return array
+     * {@inheritdoc}
      */
     public function getAliasedProperties()
     {
@@ -49,9 +40,7 @@ class SolutionsTransformer implements JsonApiMapping
     }
 
     /**
-     * List of properties in the class that will be ignored by the mapping.
-     *
-     * @return array
+     * {@inheritdoc}
      */
     public function getHideProperties()
     {
@@ -59,9 +48,7 @@ class SolutionsTransformer implements JsonApiMapping
     }
 
     /**
-     * Returns an array of properties that are used as an ID value.
-     *
-     * @return array
+     * {@inheritdoc}
      */
     public function getIdProperties()
     {
@@ -69,10 +56,7 @@ class SolutionsTransformer implements JsonApiMapping
     }
 
     /**
-     * Returns a list of URLs. This urls must have placeholders
-     * to be replaced with the getIdProperties() values.
-     *
-     * @return array
+     * {@inheritdoc}
      */
     public function getUrls()
     {
@@ -85,12 +69,17 @@ class SolutionsTransformer implements JsonApiMapping
     }
 
     /**
-     * Returns an array containing the relationship mappings as an array.
-     * Key for each relationship defined must match a property of the mapped class.
-     *
-     * @return array
+     * {@inheritdoc}
      */
     public function getRelationships()
+    {
+        return [];
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getRequiredProperties()
     {
         return [];
     }
